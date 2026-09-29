@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags SEO -->
+    <meta name="description" content="El Taco Maestro - Auténtica comida mexicana, tacos y tradición familiar en Everett, WA.">
+    <meta name="keywords" content="tacos, restaurante mexicano, comida mexicana, Everett, El Taco Maestro, mexican food, tacos en Everett">
+    <meta name="author" content="Menutech">
+    <meta name="robots" content="index, follow">
+    
+    <title>El Taco Maestro</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/Logo_taco_maestro.png" type="image/png">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ================= VARIABLES Y RESET ================= */
+        :root {
+            --rojo: #D92525;
+            --verde: #34A853;
+            --amarillo: #FFC700;
+            --naranja: #FF8A00;
+            --blanco: #FFFDF7;
+            --texto-oscuro: #2C1B10;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--blanco);
+            color: var(--texto-oscuro);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, .brand-font {
+            font-family: 'Lilita One', cursive;
+            letter-spacing: 1px;
+        }
+
+        /* ================= DECORACIÓN TEMÁTICA (SARAPE) ================= */
+        .sarape-border {
+            height: 12px;
+            width: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--rojo), var(--rojo) 25px,
+                var(--verde) 25px, var(--verde) 50px,
+                var(--amarillo) 50px, var(--amarillo) 75px,
+                var(--naranja) 75px, var(--naranja) 100px
+            );
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .pattern-bg {
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 3.333L36.667 20 20 36.667 3.333 20 20 3.333zm0 2.828L7.162 20 20 32.838 32.838 20 20 6.161z' fill='%23d92525' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* ================= NAVEGACIÓN ================= */
+        nav {
+            background-color: var(--rojo);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+            border-bottom: 3px solid var(--amarillo);
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+      
+
+        .logo-container:hover img {
+            transform: rotate(-10deg) scale(1.05);
+        }
+
+        .logo-text {
+            color: white;
+            font-size: 28px;
+            text-shadow: 2px 2px 0 var(--naranja);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--amarillo);
+            transform: translateY(-2px);
+        }
+
+        .lang-btn {
+            background-color: var(--amarillo);
+            color: var(--texto-oscuro);
+            border: 2px solid var(--texto-oscuro);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 2px 2px 0 var(--texto-oscuro);
+        }
+
+        .lang-btn:hover {
+            background-color: var(--verde);
+            color: white;
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0 var(--texto-oscuro);
+        }
+
+        /* ================= BANNER ================= */
+        .hero-banner {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            background-image: url('https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo13.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.3); /* Oscurece un poco el fondo para resaltar el logo */
+        }
+
+       /* --- CÍRCULO DEL NAV --- */
+.logo-circle {
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    border: 3px solid var(--amarillo);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el logo perfectamente */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.logo-container:hover .logo-circle {
+    transform: rotate(-10deg) scale(1.05);
+}
+
+.logo-circle img {
+    width: 75%; /* La clave: mantiene la imagen un 25% más pequeña que el círculo */
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+}
+
+/* --- CÍRCULO DEL BANNER --- */
+.hero-logo-circle {
+    position: relative;
+    z-index: 2;
+    width: 250px;
+    height: 250px;
+    background-color: white;
+    border-radius: 50%;
+    border: 6px solid var(--amarillo);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra el logo perfectamente */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    animation: float 4s ease-in-out infinite;
+}
+
+.hero-logo-circle img {
+    width: 75%; /* Ajusta este porcentaje si quieres que el logo se vea más grande o más chico */
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* ================= INFORMACIÓN DEL RESTAURANTE ================= */
+        .info-section {
+            background-color: var(--verde);
+            color: white;
+            padding: 50px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .info-card {
+            flex: 1;
+            min-width: 280px;
+            background: white;
+            color: var(--texto-oscuro);
+            padding: 30px 20px;
+            border-radius: 20px;
+            border: 4px solid var(--amarillo);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card h3 {
+            font-size: 26px;
+            color: var(--rojo);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .info-card p {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .order-number {
+            font-size: 26px;
+            color: var(--naranja);
+            font-weight: 800;
+            margin-top: 10px;
+            display: block;
+        }
+
+        /* ================= HISTORIA ================= */
+        .history-section {
+            padding: 90px 5%;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 50px;
+            margin-bottom: 40px;
+            text-shadow: 3px 3px 0px rgba(0,0,0,0.1);
+        }
+
+        .history-section h2 {
+            color: var(--verde);
+            position: relative;
+            display: inline-block;
+        }
+
+        .history-section h2::after {
+            content: '🌮';
+            position: absolute;
+            right: -40px;
+            top: 5px;
+            font-size: 35px;
+        }
+
+        .history-section h2::before {
+            content: '🤠';
+            position: absolute;
+            left: -40px;
+            top: 5px;
+            font-size: 35px;
+        }
+
+        .history-section p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #4a3320;
+            font-weight: 600;
+        }
+
+        .history-highlight {
+            background-color: var(--amarillo);
+            padding: 20px;
+            border-radius: 15px;
+            color: var(--rojo);
+            font-size: 24px;
+            transform: rotate(-1deg);
+            box-shadow: 4px 4px 0 rgba(0,0,0,0.1);
+            margin-top: 30px;
+            border: 2px dashed var(--rojo);
+        }
+
+        /* ================= GALERÍA ================= */
+        .menu-section {
+            padding: 80px 5%;
+            background-color: var(--rojo);
+            color: white;
+            position: relative;
+        }
+
+        .menu-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 15px;
+            background-image: radial-gradient(circle at 10px 0, transparent 10px, var(--rojo) 11px);
+            background-size: 20px 20px;
+            background-repeat: repeat-x;
+            transform: translateY(-100%);
+        }
+
+        .menu-section .section-title {
+            color: var(--amarillo);
+            text-shadow: 3px 3px 0 var(--texto-oscuro);
+        }
+
+        .grid-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery-item {
+            width: 100%;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            border: 4px solid var(--amarillo);
+            transition: all 0.3s ease;
+            background-color: white;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.03) rotate(1deg);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+            border-color: white;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* ================= BEBIDAS ================= */
+        .drinks-section {
+            padding: 80px 5%;
+            background-color: var(--amarillo);
+            position: relative;
+        }
+        
+        .drinks-section .section-title {
+            color: var(--rojo);
+            text-shadow: 2px 2px 0 white;
+        }
+
+        /* Uso de flexbox para centrar perfectamente los elementos */
+        .drinks-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .drink-item {
+            width: 220px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 5px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            border: 5px solid white;
+            aspect-ratio: 1/1;
+            background-color: white; /* Fondo neutro, sin rojo */
+        }
+
+        .drink-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: transform 0.4s ease;
+            /* Se eliminaron los filtros de color y opacidad */
+        }
+
+        .drink-item:hover img {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: var(--texto-oscuro);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 15px;
+            font-weight: 600;
+            border-top: 5px solid var(--naranja);
+        }
+
+        /* ================= RESPONSIVE ================= */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .history-section h2::after, .history-section h2::before {
+                display: none;
+            }
+            .section-title {
+                font-size: 38px;
+            }
+            .info-card {
+                min-width: 100%;
+            }
+            .hero-banner img {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body class="pattern-bg">
+
+    <!-- Navegación -->
+    <nav>
+        <div class="logo-container">
+    <div class="logo-circle">
+        <img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/Logo_taco_maestro.png" alt="Logo El Taco Maestro">
+    </div>
+    <span class="brand-font logo-text">El Taco Maestro</span>
+</div>
+        <div class="nav-links">
+            <a href="#inicio" data-i18n="nav_home">Inicio</a>
+            <a href="#historia" data-i18n="nav_history">Historia</a>
+            <a href="#menu" data-i18n="nav_menu">Menú</a>
+            <button class="lang-btn" onclick="toggleLanguage()" id="lang-toggle">EN</button>
+        </div>
+    </nav>
+    <div class="sarape-border"></div>
+
+    <!-- Banner Principal con Logo -->
+   <header id="inicio" class="hero-banner">
+    <div class="hero-logo-circle">
+        <img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/Logo_taco_maestro.png" alt="Logo El Taco Maestro Central">
+    </div>
+</header>
+    <div class="sarape-border"></div>
+
+    <!-- Sección de Información (Dirección, Teléfono, Horarios) -->
+    <section class="info-section pattern-bg">
+        <div class="info-card">
+            <h3 class="brand-font" data-i18n="info_address_title">Dirección</h3>
+            <p>13526 Hwy 99, Everett, WA 98204</p>
+        </div>
+        <div class="info-card">
+            <h3 class="brand-font" data-i18n="info_order_title">Ordena Aquí</h3>
+            <p data-i18n="info_order_desc">Llámanos al número:</p>
+            <span class="order-number">(425) 466-8261</span>
+        </div>
+        <div class="info-card">
+            <h3 class="brand-font" data-i18n="info_hours_title">Horarios</h3>
+            <p><span data-i18n="info_hours_mon_sat">Lunes a Sábado:</span> 10:30 AM - 8:00 PM</p>
+            <p><span data-i18n="info_hours_sun">Domingo:</span> 11:00 AM - 8:00 PM</p>
+        </div>
+    </section>
+    <div class="sarape-border"></div>
+
+    <!-- Historia -->
+    <section id="historia" class="history-section">
+        <h2 class="brand-font section-title" data-i18n="history_title">Nuestra Historia</h2>
+        <p data-i18n="history_p1">Hace 13 años comenzó una aventura que nació del amor por la comida, la familia y el deseo de compartir sabores que nos representan.</p>
+        <p data-i18n="history_p2">Lo que empezó como un pequeño food truck familiar se convirtió poco a poco en un negocio construido con mucho esfuerzo, dedicación y el apoyo de nuestros clientes.</p>
+        <p data-i18n="history_p3">Durante estos 13 años hemos tenido la oportunidad de servir a muchas personas, crear momentos especiales y, sobre todo, mantener vivo nuestro compromiso de preparar cada platillo con el mismo cariño con el que comenzó esta historia.</p>
+        <p data-i18n="history_p4">Somos un negocio familiar, y para nosotros cada cliente forma parte de nuestra historia. Gracias a todos los que nos han acompañado durante estos 13 años y han hecho posible que sigamos creciendo.</p>
+        
+        <div class="history-highlight brand-font" data-i18n="history_p5">
+            13 años de sabor, familia y tradición. ¡Gracias por ser parte de nuestra historia!
+        </div>
+    </section>
+
+    <!-- Galería de Platillos -->
+    <section id="menu" class="menu-section">
+        <h2 class="brand-font section-title" data-i18n="menu_title">Nuestros Especiales</h2>
+        <div class="grid-gallery">
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo1.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo2.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo3.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo4.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo5.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo6.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo7.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo8.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo9.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo10.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo11.jpg" alt="Platillo"></div>
+            <div class="gallery-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/platillo12.jpg" alt="Platillo"></div>
+        </div>
+    </section>
+    <div class="sarape-border"></div>
+
+    <!-- Galería de Bebidas (Centradas y sin efectos de color) -->
+    <section class="drinks-section pattern-bg">
+        <h2 class="brand-font section-title" data-i18n="drinks_title">Bebidas Refrescantes</h2>
+        <div class="drinks-gallery">
+            <div class="drink-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/soda.jpg" alt="Soda"></div>
+            <div class="drink-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/soda2.jpg" alt="Soda"></div>
+            <div class="drink-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/soda3.jpg" alt="Soda"></div>
+            <div class="drink-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/soda4.jpg" alt="Soda"></div>
+            <div class="drink-item"><img src="https://raw.githubusercontent.com/yesimenutech/eltacomaestro.online/main/img/soda5.jpg" alt="Soda"></div>
+        </div>
+    </section>
+    <div class="sarape-border"></div>
+
+    <!-- Footer -->
+    <footer>
+        <p id="copyright-footer"></p>
+    </footer>
+
+    <!-- Script de Traducción y Lógica -->
+    <script>
+        // Actualización dinámica del año
+        const currentYear = new Date().getFullYear();
+        document.getElementById('copyright-footer').innerHTML = `&copy; 2015 - ${currentYear} Powered by Menutech`;
+
+        // Diccionario de Traducciones
+        const translations = {
+            es: {
+                nav_home: "Inicio",
+                nav_history: "Historia",
+                nav_menu: "Menú",
+                info_address_title: "Dirección",
+                info_order_title: "Ordena Aquí",
+                info_order_desc: "Llámanos al número:",
+                info_hours_title: "Horarios",
+                info_hours_mon_sat: "Lunes a Sábado:",
+                info_hours_sun: "Domingo:",
+                history_title: "Nuestra Historia",
+                history_p1: "Hace 13 años comenzó una aventura que nació del amor por la comida, la familia y el deseo de compartir sabores que nos representan.",
+                history_p2: "Lo que empezó como un pequeño food truck familiar se convirtió poco a poco en un negocio construido con mucho esfuerzo, dedicación y el apoyo de nuestros clientes.",
+                history_p3: "Durante estos 13 años hemos tenido la oportunidad de servir a muchas personas, crear momentos especiales y, sobre todo, mantener vivo nuestro compromiso de preparar cada platillo con el mismo cariño con el que comenzó esta historia.",
+                history_p4: "Somos un negocio familiar, y para nosotros cada cliente forma parte de nuestra historia. Gracias a todos los que nos han acompañado durante estos 13 años y han hecho posible que sigamos creciendo.",
+                history_p5: "13 años de sabor, familia y tradición. ¡Gracias por ser parte de nuestra historia!",
+                menu_title: "Nuestros Especiales",
+                drinks_title: "Bebidas Refrescantes"
+            },
+            en: {
+                nav_home: "Home",
+                nav_history: "History",
+                nav_menu: "Menu",
+                info_address_title: "Location",
+                info_order_title: "Order Now",
+                info_order_desc: "Call us at:",
+                info_hours_title: "Hours",
+                info_hours_mon_sat: "Mon to Sat:",
+                info_hours_sun: "Sunday:",
+                history_title: "Our Story",
+                history_p1: "13 years ago, an adventure began, born from a love for food, family, and the desire to share the flavors that represent us.",
+                history_p2: "What started as a small family food truck gradually grew into a business built with hard work, dedication, and the support of our customers.",
+                history_p3: "During these 13 years, we have had the opportunity to serve many people, create special moments, and, above all, keep our commitment alive to prepare every dish with the same love that started this story.",
+                history_p4: "We are a family business, and for us, every customer is part of our history. Thank you to everyone who has supported us throughout these 13 years and made it possible for us to keep growing.",
+                history_p5: "13 years of flavor, family, and tradition. Thank you for being part of our story!",
+                menu_title: "Our Specials",
+                drinks_title: "Refreshing Drinks"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('lang-toggle').textContent = currentLang === 'es' ? 'EN' : 'ES';
+            
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if(translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+        }
+    </script>
+</body>
+</html>
